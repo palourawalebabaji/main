@@ -134,11 +134,17 @@
   </style>
 </head>
 <body>
-  <!-- Autoplay Om Sound -->
+  <!-- Om Sound (loop) -->
   <audio id="omSound" autoplay loop>
     <source src="om.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
+  <!-- Play Button -->
+  <div style="margin-top: 20px;">
+    <button onclick="document.getElementById('omSound').play()" 
+            style="padding:10px 20px; font-size:16px;">Play Om Sound</button>
+  </div>
 
   <!-- Falling flowers on left -->
   <div class="emoji" style="left:2%; animation-duration:6s;">🌸</div>
