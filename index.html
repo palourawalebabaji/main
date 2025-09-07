@@ -16,7 +16,7 @@
       position: relative;
     }
 
-    /* Om watermark background */
+    /* Background floating Om symbols */
     body::before {
       content: "🕉️";
       font-size: 120px;
@@ -98,7 +98,28 @@
       color: white;
     }
 
-    /* Falling 🙏🏻 emojis */
+    .link-container {
+      display: inline-block;
+      position: relative;
+      margin: 10px;
+    }
+
+    .hover-text {
+      display: block;
+      font-size: 14px;
+      margin-top: 5px;
+      color: #fff;
+      opacity: 0;
+      text-shadow: 0 0 5px #ff3c6a, 0 0 10px #ff3c6a, 0 0 20px #ff3c6a;
+      animation: glow 1.5s ease-in-out infinite alternate;
+      transition: opacity 0.3s;
+    }
+
+    .link-container:hover .hover-text {
+      opacity: 1;
+    }
+
+    /* Falling flower emojis */
     .emoji {
       position: fixed;
       top: -50px;
@@ -113,27 +134,23 @@
   </style>
 </head>
 <body>
-  <!-- Om Sound (loop) -->
-  <audio id="omSound" loop>
+  <!-- Autoplay Om Sound -->
+  <audio id="omSound" autoplay loop>
     <source src="om.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <!-- Play / Pause Buttons -->
-  <div style="margin-top: 20px;">
-    <button onclick="document.getElementById('omSound').play()" style="padding:10px 20px; font-size:16px;">Play Om Sound</button>
-    <button onclick="document.getElementById('omSound').pause()" style="padding:10px 20px; font-size:16px;">Pause Om Sound</button>
-  </div>
+  <!-- Falling flowers on left -->
+  <div class="emoji" style="left:2%; animation-duration:6s;">🌸</div>
+  <div class="emoji" style="left:5%; animation-duration:8s;">🌼</div>
+  <div class="emoji" style="left:8%; animation-duration:10s;">🌺</div>
+  <div class="emoji" style="left:11%; animation-duration:9s;">🌷</div>
 
-  <!-- Falling 🙏🏻 emojis on left edge -->
-  <div class="emoji" style="left:2%; animation-duration:6s;">🙏🏻</div>
-  <div class="emoji" style="left:5%; animation-duration:8s;">🙏🏻</div>
-  <div class="emoji" style="left:8%; animation-duration:10s;">🙏🏻</div>
-
-  <!-- Falling 🙏🏻 emojis on right edge -->
-  <div class="emoji" style="right:2%; animation-duration:7s;">🙏🏻</div>
-  <div class="emoji" style="right:5%; animation-duration:9s;">🙏🏻</div>
-  <div class="emoji" style="right:8%; animation-duration:11s;">🙏🏻</div>
+  <!-- Falling flowers on right -->
+  <div class="emoji" style="right:2%; animation-duration:7s;">🌻</div>
+  <div class="emoji" style="right:5%; animation-duration:9s;">🌹</div>
+  <div class="emoji" style="right:8%; animation-duration:11s;">💐</div>
+  <div class="emoji" style="right:11%; animation-duration:10s;">🌸</div>
 
   <div class="container">
     <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
@@ -145,8 +162,14 @@
     </p>
     <p class="glow">🙏 JAI MATA DI 🙏</p>
     <div class="links">
-      <a href="https://youtube.com/@asood24?si=SKMI402GNDXre_Ht" target="_blank">YouTube</a>
-      <a href="https://www.instagram.com/paloura_wale_baba_g?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+      <div class="link-container">
+        <a href="https://youtube.com/@asood24?si=SKMI402GNDXre_Ht" target="_blank">YouTube</a>
+        <span class="hover-text">Click Here</span>
+      </div>
+      <div class="link-container">
+        <a href="https://www.instagram.com/paloura_wale_baba_g?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+        <span class="hover-text">Click Here</span>
+      </div>
     </div>
   </div>
 </body>
