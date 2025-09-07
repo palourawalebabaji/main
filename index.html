@@ -113,10 +113,17 @@
   </style>
 </head>
 <body>
-  <!-- Om Sound (Looping) -->
-  <audio id="omSound" autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_39c8dd4b88.mp3?filename=om-meditation-123106.mp3" type="audio/mpeg">
+  <!-- Om Sound (loop) -->
+  <audio id="omSound" loop>
+    <source src="om.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
+
+  <!-- Play / Pause Buttons -->
+  <div style="margin-top: 20px;">
+    <button onclick="document.getElementById('omSound').play()" style="padding:10px 20px; font-size:16px;">Play Om Sound</button>
+    <button onclick="document.getElementById('omSound').pause()" style="padding:10px 20px; font-size:16px;">Pause Om Sound</button>
+  </div>
 
   <!-- Falling 🙏🏻 emojis on left edge -->
   <div class="emoji" style="left:2%; animation-duration:6s;">🙏🏻</div>
