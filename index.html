@@ -12,8 +12,29 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      overflow: hidden;
       position: relative;
+      /* removed overflow: hidden; so scrolling works */
+    }
+
+    /* Scrolling announcement banner */
+    .scrolling-text {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: yellow;
+      text-shadow: 0 0 5px red, 0 0 10px orange;
+      white-space: nowrap;
+      animation: scrollText 12s linear infinite;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 8px 0;
+      z-index: 10;
+    }
+    @keyframes scrollText {
+      from { left: 100%; }
+      to { left: -100%; }
     }
 
     /* Background floating Om symbols */
@@ -45,7 +66,7 @@
     }
 
     .container {
-      padding: 60px 20px;
+      padding: 80px 20px 60px; /* added top padding so text isn’t hidden under banner */
       position: relative;
       z-index: 2;
     }
@@ -134,14 +155,17 @@
   </style>
 </head>
 <body>
+  <!-- Scrolling text -->
+  <div class="scrolling-text">📢 Saturday 1 PM YouTube Live ? 📢</div>
+
   <!-- Om Sound (loop) -->
-  <audio id="omSound" autoplay loop>
+  <audio id="omSound" loop>
     <source src="om.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
   <!-- Play Button -->
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 60px;">
     <button onclick="document.getElementById('omSound').play()" 
             style="padding:10px 20px; font-size:16px;">Play Om Sound</button>
   </div>
