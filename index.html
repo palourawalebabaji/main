@@ -13,7 +13,6 @@
       margin: 0;
       padding: 0;
       position: relative;
-      /* removed overflow: hidden; so scrolling works */
     }
 
     /* Scrolling announcement banner */
@@ -66,7 +65,7 @@
     }
 
     .container {
-      padding: 80px 20px 60px; /* added top padding so text isn’t hidden under banner */
+      padding: 80px 20px 60px;
       position: relative;
       z-index: 2;
     }
@@ -152,11 +151,30 @@
       0% { transform: translateY(-100px); opacity: 1; }
       100% { transform: translateY(110vh); opacity: 0.9; }
     }
+
+    /* Glowing pulsing rose */
+    .rose-button {
+      font-size: 40px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      animation: pulseGlow 2s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from {
+        transform: scale(1);
+        text-shadow: 0 0 10px red, 0 0 20px pink;
+      }
+      to {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px yellow, 0 0 40px red;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Scrolling text -->
-  <div class="scrolling-text">📢 Saturday 1 PM YouTube Live ? 📢</div>
+  <div class="scrolling-text">📢 Saturday 1 PM YouTube Live 📢</div>
 
   <!-- Om Sound (loop) -->
   <audio id="omSound" loop>
@@ -164,10 +182,11 @@
     Your browser does not support the audio element.
   </audio>
 
-  <!-- Play Button -->
+  <!-- Glowing Rose Play Button -->
   <div style="margin-top: 60px;">
-    <button onclick="document.getElementById('omSound').play()" 
-            style="padding:10px 20px; font-size:16px;">Play Om Sound</button>
+    <button onclick="document.getElementById('omSound').play()" class="rose-button">
+      🌹
+    </button>
   </div>
 
   <!-- Falling flowers on left -->
